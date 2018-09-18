@@ -9,7 +9,10 @@ GPIO.setup(18, GPIO.OUT) #GPIO pin # is 18 -- Red
 GPIO.setup(8, GPIO.OUT) #GPIO pin # is 8 -- Yellow
 GPIO.setup(21, GPIO.OUT) #GPIO pin # is 21 -- Green
 
-#Time to cycle
+#Initial Stage - everything is off
+GPIO.output(18, False) #Red is off
+GPIO.output(8, False) #Yellow is off
+GPIO.output(21, False) #Green is off
 
 while True: #Let's do a loop
     GPIO.output(18, True) #Red is on
