@@ -54,3 +54,5 @@ while True: #Let's do a loop
     time.sleep(4) #On for 4 sec
     GPIO.output(8, False) #Yellow is off
 
+if __name__ == "__main__":
+    app.run()
