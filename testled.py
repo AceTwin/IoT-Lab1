@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 
 #Testing for 3 LED
 
-GPIO.setwarnings(False) #Initial State
+GPIO.setwarnings(False) #Disable warnings
 GPIO.setmode(GPIO.BCM) #Referring to pins in the Broadcom SOC channel - the numbers after GPIO
 GPIO.setup(18, GPIO.OUT) #GPIO pin # is 18 -- Red
 GPIO.setup(8, GPIO.OUT) #GPIO pin # is 8 -- Yellow
