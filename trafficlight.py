@@ -14,6 +14,11 @@ import Flask #Importing Flask
 
 app=Flask(__name__)
 
+#Initial Stage -- everything off
+GPIO.output(18, False) #Red is off
+GPIO.output(8, False) #Yellow is off
+GPIO.output(21, False) #Green is off
+
 #Red
 @
 app.route('/redled') #web route to red led
@@ -34,7 +39,10 @@ GPIO.output(8, False) #Yellow is off
 GPIO.output(21, False) #Green is off
 
 @app.route('cycle') #web route to cycle through all the lights
-#Time to cycle
+#Initial Stage -- everything is off
+GPIO.output(18, False) #Red is off
+GPIO.output(8, False) #Yellow is off
+GPIO.output(21, False) #Green is off
 while True: #Let's do a loop
     GPIO.output(18, True) #Red is on
     time.sleep(4) #Red continues on for 2 secs
