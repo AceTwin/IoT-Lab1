@@ -63,7 +63,8 @@ def cycle():
         GPIO.output(8, True) #Yellow is on
         time.sleep(4) #On for 4 sec
         GPIO.output(8, False) #Yellow is off
-        return '<meta http-equiv="Refresh" content="0; url=/">Command Sent'
+    #Keep on cycling but return to the initial web page for another command
+    return '<meta http-equiv="Refresh" content="0; url=/">Command Sent'
 
 if __name__ == "__main__":
     app.run()
