@@ -2,6 +2,7 @@ import sys, time
 import RPi.GPIO as GPIO
 
 #Testing for traffic light cycle
+#Referenced Code: https://www.canakit.com/Media/CanaKit-Raspberry-Pi-Quick-Start-Guide-3.2.pdf
 
 GPIO.setwarnings(False) #Disable warnings
 GPIO.setmode(GPIO.BCM) #Referring to pins in the Broadcom SOC channel - the numbers after GPIO
