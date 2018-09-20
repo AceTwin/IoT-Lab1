@@ -6,6 +6,12 @@ import RPi.GPIO as GPIO
 
 #Final Code For Server End
 
+#Reference Code: 
+#https://www.canakit.com/Media/CanaKit-Raspberry-Pi-Quick-Start-Guide-3.2.pdf
+#https://pythonspot.com/flask-with-static-html-files/
+#https://www.cloudways.com/blog/internet-of-things-remote-control-appliances-using-raspberry-pi/
+#https://docs.dataplicity.com/docs/control-gpios-using-rest-api
+
 GPIO.setwarnings(False) #Disable warnings
 GPIO.setmode(GPIO.BCM) #Referring to pins in the Broadcom SOC channel - the numbers after GPIO
 GPIO.setup(18, GPIO.OUT) #GPIO pin # is 18 -- Red
