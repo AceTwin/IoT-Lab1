@@ -1,6 +1,7 @@
 import sys, time
 import RPi.GPIO as GPIO
 
+#Referenced Code:https://www.canakit.com/Media/CanaKit-Raspberry-Pi-Quick-Start-Guide-3.2.pdf
 #Testing for 3 LED
 
 GPIO.setwarnings(False) #Disable warnings
