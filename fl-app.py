@@ -18,6 +18,8 @@ GPIO.setup(18, GPIO.OUT) #GPIO pin # is 18 -- Red
 GPIO.setup(8, GPIO.OUT) #GPIO pin # is 8 -- Yellow
 GPIO.setup(21, GPIO.OUT) #GPIO pin # is 21 -- Green
 
+led = 0
+
 #app = FlaskAPI(__name__)
 app = Flask(__name__)
 
@@ -34,16 +36,22 @@ def root():
 @app.route('/redled') #web route to red led
 def redled():
     GPIO.output(18, True) #Red is on
+    global led
+    led = 1
     return '<meta http-equiv="Refresh" content="0; url=/">Command Sent'
 
 @app.route('/yellowled') #web route to yellow led
 def yellowled():
     GPIO.output(8, True) #Yellow is on
+    global led
+    led = 2
     return '<meta http-equiv="Refresh" content="0; url=/">Command Sent'
 
 @app.route('/greenled') #web route to green led
 def greenled():
     GPIO.output(21, True) #Green is on
+    global led
+    led = 3
     return '<meta http-equiv="Refresh" content="0; url=/">Command Sent'
 
 @app.route('/off') #web route to turning light(s) off
@@ -51,10 +59,20 @@ def off():
     GPIO.output(18, False) #Red is off
     GPIO.output(8, False) #Yellow is off
     GPIO.output(21, False) #Green is off
+    global led
+    led = 0
     return '<meta http-equiv="Refresh" content="0; url=/">Command Sent'
+
+@app.route('/state')
+def state():
+    global led
+    return str(led)
 
 @app.route('/cycle') #web route to cycle through all the lights
 def cycle():
+    global led
+    led = 4
+
     #Initial Stage -- everything is off
     GPIO.output(18, False) #Red is off
     GPIO.output(8, False) #Yellow is off
