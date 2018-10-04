@@ -73,15 +73,15 @@ def cycle():
     global led
     led = 4
 
-        GPIO.output(18, True) #Red is on
-        time.sleep(4) #Red continues on for 2 secs
-        GPIO.output(18, False) #Red is off
-        GPIO.output(21, True) #Green is on
-        time.sleep(4) #Green is on for 2 secs
-        GPIO.output(21, False) #Green is off
-        GPIO.output(8, True) #Yellow is on
-        time.sleep(4) #On for 4 sec
-        GPIO.output(8, False) #Yellow is off
+    GPIO.output(18, True) #Red is on
+    time.sleep(4) #Red continues on for 2 secs
+    GPIO.output(18, False) #Red is off
+    GPIO.output(21, True) #Green is on
+    time.sleep(4) #Green is on for 2 secs
+    GPIO.output(21, False) #Green is off
+    GPIO.output(8, True) #Yellow is on
+    time.sleep(4) #On for 4 sec
+    GPIO.output(8, False) #Yellow is off
     #Keep on cycling but return to the initial web page for another command
     return '<meta http-equiv="Refresh" content="0; url=/">Command Sent'
 
